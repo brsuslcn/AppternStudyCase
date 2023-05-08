@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/categories_fragment"
+        android:title="  Categories"
+        android:icon="@drawable/music_icon"/>
+
+
+    <item
+        android:id="@+id/likes_fragment"
+        android:title="  Likes"
+        android:icon="@drawable/like_heart_round_icon"/>
+</menu>
