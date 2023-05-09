@@ -6,7 +6,9 @@ import com.example.appternstudycase.R
 import com.example.appternstudycase.databinding.ActivityMainBinding
 import com.example.appternstudycase.ui.fragment.CategoriesFragment
 import com.example.appternstudycase.ui.fragment.LikesFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
