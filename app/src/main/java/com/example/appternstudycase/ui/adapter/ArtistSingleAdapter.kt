@@ -1,11 +1,14 @@
 package com.example.appternstudycase.ui.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appternstudycase.data.model.albums_model.Data
 import com.example.appternstudycase.databinding.CardviewAlbumBinding
+import com.example.appternstudycase.ui.activity.AlbumSingle
 import com.squareup.picasso.Picasso
 
 class ArtistSingleAdapter(private val context : Context) : RecyclerView.Adapter<ArtistSingleAdapter.ItemViewHolder>() {
@@ -19,10 +22,26 @@ class ArtistSingleAdapter(private val context : Context) : RecyclerView.Adapter<
             binding.apply{
                 Picasso.get()
                     .load(item?.cover)
-                    .into(imgAlbumtPic)
+                    .into(imgAlbumPic)
 
                 txtAlbumName.text = item?.title
                 txtPdate.text = item?.release_date
+
+             root.setOnClickListener()
+             {
+                 for(i in items)
+                 {
+                     if(i?.title==txtAlbumName.text)
+                     {
+                         val intent = Intent(context, AlbumSingle::class.java)
+                         intent.putExtra("albumName", i?.title)
+                         intent.putExtra("albumId", i?.id)
+                         intent.putExtra("albumPic", i?.cover)
+                         intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK
+                         context.startActivity(intent)
+                     }
+                 }
+             }
             }
 
         }

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_margin="15dp"
+    android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
+    app:cardElevation="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imgAlbumPic"
+            android:id="@+id/imgTracksPic"
             android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="8dp" />
@@ -22,28 +21,42 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginStart="0dp"
-            android:layout_toEndOf="@id/imgAlbumPic"
+            android:layout_toEndOf="@id/imgTracksPic"
             android:background="@color/black" />
 
         <TextView
-            android:id="@+id/txtAlbumName"
+            android:id="@+id/txtTrackName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@id/view"
             android:layout_centerInParent="true"
             android:layout_marginStart="20dp"
-            android:text="Album Name"
+            android:text="Track Name"
             android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtPdate"
+            android:id="@+id/txtDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtAlbumName"
+            android:layout_below="@id/txtTrackName"
             android:layout_alignStart="@id/view"
             android:layout_marginStart="20dp"
             android:layout_centerInParent="true"
-            android:text="Published Date" />
+            android:text="Track Duration" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/heart_icon"/>
     </RelativeLayout>
+
+
+
+
+
 </androidx.cardview.widget.CardView>
