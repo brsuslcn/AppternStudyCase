@@ -1,5 +1,6 @@
 package com.example.appternstudycase.data.remote
 
+import com.example.appternstudycase.data.model.albums_model.AlbumsModel
 import com.example.appternstudycase.data.model.arists_model.ArtistsModel
 import com.example.appternstudycase.data.model.categories_model.CategoriesModel
 import retrofit2.Response
@@ -12,4 +13,7 @@ interface ApiServices {
 
      @GET("genre/{id}/artists")
      suspend fun getArtists(@Path("id") id:Int) : Response<ArtistsModel>
+
+     @GET("artist/{artist_id}/albums")
+     suspend fun getAlbums(@Path("artist_id") artistId:Int) : Response<AlbumsModel>
 }

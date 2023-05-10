@@ -1,6 +1,5 @@
 package com.example.appternstudycase.ui.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FragmentCategoriesViewModel @Inject constructor(private val apiRepository: ApiRepository) : ViewModel() {
+class CategoriesViewModel @Inject constructor(private val apiRepository: ApiRepository) : ViewModel() {
     private val _categoriesLiveData = MutableLiveData<List<Data>>()
     val categoriesLiveData: LiveData<List<Data>> get() = _categoriesLiveData
 

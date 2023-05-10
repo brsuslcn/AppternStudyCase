@@ -35,6 +35,7 @@ class ArtistsAdapter(private val context : Context) : RecyclerView.Adapter<Artis
                             val intent = Intent(context, ArtistSingle::class.java)
                            intent.putExtra("artistName", i?.name)
                            intent.putExtra("artistPicture", i?.picture_big)
+                           intent.putExtra("artistId",i?.id)
                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                            context.startActivity(intent)
                         }
