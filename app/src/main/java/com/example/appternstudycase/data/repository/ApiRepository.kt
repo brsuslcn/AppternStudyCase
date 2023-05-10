@@ -8,10 +8,10 @@ import javax.inject.Inject
 
 class ApiRepository @Inject constructor(private val apiService : ApiServices) {
     suspend fun categories() : Response<CategoriesModel>{
-        return apiService.categories()
+        return apiService.getCategories()
     }
 
     suspend fun artists(genreId : Int) : Response<ArtistsModel>{
-        return apiService.artists(genreId)
+        return apiService.getArtists(genreId)
     }
 }

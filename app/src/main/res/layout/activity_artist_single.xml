@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.CategorySingle">
+    tools:context=".ui.activity.ArtistSingle">
+
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/purple_700"
@@ -18,24 +19,32 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txtCategory"
+            android:id="@+id/txtartistName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categoriy Name"
+            android:text="Artist Name"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/imgArtistPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

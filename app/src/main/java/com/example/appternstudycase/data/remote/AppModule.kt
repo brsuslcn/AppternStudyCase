@@ -16,7 +16,7 @@ class AppModule {
 
     fun provideRetrofit() : Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://api.deezer.com/")
+            .baseUrl("https://api.deezer.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

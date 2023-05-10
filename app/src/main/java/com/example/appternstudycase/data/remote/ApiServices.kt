@@ -8,8 +8,8 @@ import retrofit2.http.Path
 
 interface ApiServices {
      @GET("genre")
-     suspend fun categories() : Response<CategoriesModel>
+     suspend fun getCategories() : Response<CategoriesModel>
 
      @GET("genre/{id}/artists")
-     suspend fun artists(@Path("id") id:Int) : Response<ArtistsModel>
+     suspend fun getArtists(@Path("id") id:Int) : Response<ArtistsModel>
 }

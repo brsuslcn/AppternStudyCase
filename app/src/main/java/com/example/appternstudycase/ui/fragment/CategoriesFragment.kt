@@ -24,7 +24,7 @@ class CategoriesFragment : Fragment() {
         binding = FragmentCategoriesBinding.inflate(layoutInflater)
         viewModel.categories()
 
-        val categoriesAdapter = CategoriesAdapter()
+        val categoriesAdapter = CategoriesAdapter(requireContext())
         binding.apply {
             recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
             recyclerView.adapter = categoriesAdapter

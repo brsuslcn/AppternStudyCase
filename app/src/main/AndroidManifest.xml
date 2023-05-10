@@ -15,7 +15,10 @@
         android:theme="@style/Theme.AppternStudyCase"
         tools:targetApi="31">
         <activity
-            android:name=".CategorySingle"
+            android:name=".ui.activity.ArtistSingle"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CategorySingle"
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"
