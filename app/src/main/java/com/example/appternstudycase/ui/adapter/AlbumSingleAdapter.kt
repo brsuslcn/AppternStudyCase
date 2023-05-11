@@ -2,11 +2,13 @@ package com.example.appternstudycase.ui.adapter
 
 import android.media.AudioAttributes
 import android.media.MediaPlayer
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appternstudycase.data.model.sql_likes_model.TracksLikesModel
 import com.example.appternstudycase.data.model.tracks_model.Data
 import com.example.appternstudycase.databinding.CardviewTracksBinding
 import com.squareup.picasso.Picasso
@@ -15,7 +17,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.DecimalFormat
 
-class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwner: LifecycleOwner) : RecyclerView.Adapter<AlbumSingleAdapter.ItemViewHolder>() {
+class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwner: LifecycleOwner, private val likeListener: LikeListener) : RecyclerView.Adapter<AlbumSingleAdapter.ItemViewHolder>() {
     private var items = emptyList<Data?>()
     private lateinit var mediaPlayer : MediaPlayer
 
@@ -38,9 +40,22 @@ class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwn
                 relaseMediaPlayer()
                 lifecycleOwner.lifecycleScope.launch() {
                     playTrack(item!!.preview)
+                    }
                 }
 
+            btnLike.setOnClickListener()
+            {
+                lifecycleOwner.lifecycleScope.launch(){
+                    val newLike = TracksLikesModel(item!!.id, item!!.title, duration, albumPic)
+                    likeListener.likeTrack(newLike)
+                    Log.e("Liked list:", likeListener.getLikes().value.toString())
                 }
+
+            }
+
+
+
+
             }
         }
     }
