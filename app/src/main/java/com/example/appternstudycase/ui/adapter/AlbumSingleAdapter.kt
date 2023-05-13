@@ -1,13 +1,16 @@
 package com.example.appternstudycase.ui.adapter
 
+
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appternstudycase.R
 import com.example.appternstudycase.data.model.sql_likes_model.TracksLikesModel
 import com.example.appternstudycase.data.model.tracks_model.Data
 import com.example.appternstudycase.databinding.CardviewTracksBinding
@@ -20,6 +23,8 @@ import java.text.DecimalFormat
 class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwner: LifecycleOwner, private val likeListener: LikeListener) : RecyclerView.Adapter<AlbumSingleAdapter.ItemViewHolder>() {
     private var items = emptyList<Data?>()
     private lateinit var mediaPlayer : MediaPlayer
+    var isLiked = false
+
 
     inner class ItemViewHolder(private val binding : CardviewTracksBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item : Data?)
@@ -28,13 +33,25 @@ class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwn
             val df = DecimalFormat("#.00")
             val duration = df.format((item?.duration)?.toDouble()?.div(60.0))
 
+
             binding.apply{
+
                 Picasso.get()
                     .load(albumPic)
                     .into(imgTracksPic)
                 txtTrackName.text = item?.title
                 txtDuration.text = "$duration\""
 
+
+
+                likeListener.getLikes().observe(lifecycleOwner, Observer { likes ->
+                    isLiked =likes?.any(){it.track_title == item?.title}!!
+                    if (isLiked) {
+                        btnLike.setImageResource(R.drawable.heart_icon_fill)
+                    } else {
+                        btnLike.setImageResource(R.drawable.heart_icon)
+                    }
+                })
 
             root.setOnClickListener(){
                 relaseMediaPlayer()
@@ -45,18 +62,15 @@ class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwn
 
             btnLike.setOnClickListener()
             {
-                lifecycleOwner.lifecycleScope.launch(){
+
                     val newLike = TracksLikesModel(item!!.id, item!!.title, duration, albumPic)
                     likeListener.likeTrack(newLike)
-                    Log.e("Liked list:", likeListener.getLikes().value.toString())
-                }
+                    btnLike.setImageResource(R.drawable.heart_icon_fill)
 
             }
-
-
-
-
             }
+
+            isLiked=false
         }
     }
 
@@ -100,4 +114,5 @@ class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwn
             mediaPlayer.release()
         }
     }
+
 }

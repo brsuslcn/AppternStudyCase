@@ -48,13 +48,7 @@ class AlbumSingle : AppCompatActivity() , LikeListener {
             albumSingleAdapter.updateItems(tracks)
         })
 
-        val job = CoroutineScope(Dispatchers.Main).launch()
-        {
-          /*  val newLike = SqlLikesModel(1233666998,"deneme","denmee","denemepic")
-            viewModel.likeTrack(newLike)*/
-
-        }
-
+     
         viewModel.dbLikes()
     }
 
@@ -74,4 +68,6 @@ class AlbumSingle : AppCompatActivity() , LikeListener {
     override fun getLikes(): MutableLiveData<List<TracksLikesModel>> {
         return viewModel.likedData
     }
+
+
 }

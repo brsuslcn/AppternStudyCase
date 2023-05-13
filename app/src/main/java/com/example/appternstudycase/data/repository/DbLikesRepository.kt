@@ -32,6 +32,7 @@ class DbLikesRepository(var likesDao : LikesDao) {
     {
         val job = CoroutineScope(Dispatchers.Main).launch{
             likesDao.like(track)
+            likedList.value=likesDao.allLikes()
         }
     }
 
@@ -39,6 +40,7 @@ class DbLikesRepository(var likesDao : LikesDao) {
     {
         val job = CoroutineScope(Dispatchers.Main).launch {
             likesDao.dislike(track)
+            likedList.value=likesDao.allLikes()
         }
     }
 
