@@ -2,6 +2,7 @@ package com.example.appternstudycase.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.appternstudycase.R
 import com.example.appternstudycase.databinding.ActivityMainBinding
 import com.example.appternstudycase.ui.fragment.CategoriesFragment
@@ -15,10 +16,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setupSmoothBottomMenu()
 
-        setContentView(binding.root)
+
     }
 
     private fun setupSmoothBottomMenu() {

@@ -37,6 +37,7 @@ class ArtistSingleAdapter(private val context : Context) : RecyclerView.Adapter<
                          intent.putExtra("albumName", i?.title)
                          intent.putExtra("albumId", i?.id)
                          intent.putExtra("albumPic", i?.cover)
+                         Log.e("albumId", i?.id.toString())
                          intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK
                          context.startActivity(intent)
                      }

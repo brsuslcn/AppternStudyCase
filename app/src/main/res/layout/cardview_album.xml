@@ -11,11 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgAlbumPic"
-            android:layout_width="120dp"
+            android:layout_width="75dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:layout_margin="10dp"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
 
         <View
             android:id="@+id/view"

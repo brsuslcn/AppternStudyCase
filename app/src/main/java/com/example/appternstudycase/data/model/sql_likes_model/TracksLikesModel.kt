@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull
 
 @Entity(tableName = "tracks")
 data class TracksLikesModel(
-    @PrimaryKey val track_id : Int,
+    @PrimaryKey val track_id : Long,
     @ColumnInfo(name = "track_title") @NotNull var track_title : String,
     @ColumnInfo(name = "track_duration") @NotNull var track_duration : String,
     @ColumnInfo(name = "track_picture") @NotNull var track_picture : String,

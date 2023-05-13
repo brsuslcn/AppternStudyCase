@@ -5,7 +5,8 @@
     android:layout_height="150dp"
     android:layout_margin="25dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="5dp">
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="@color/pink_50">
 
 
     <LinearLayout
@@ -17,14 +18,16 @@
             android:id="@+id/imgCategoryPic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"/>
         
         <TextView
             android:id="@+id/txtCategoryName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Cateogry Name" />
+            android:text="Cateogry Name"
+            android:layout_marginBottom="5dp"/>
 
 
     </LinearLayout>

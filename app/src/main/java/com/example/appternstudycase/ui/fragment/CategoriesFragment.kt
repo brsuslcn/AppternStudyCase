@@ -1,6 +1,7 @@
 package com.example.appternstudycase.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,15 @@ class CategoriesFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCategoriesBinding.inflate(layoutInflater)
+
+        try {
+
+        }
+        catch(e:Exception)
+        {
+            Log.e("Hata : ", "İnternet yok")
+        }
+
         viewModel.categories()
 
         val categoriesAdapter = CategoriesAdapter(requireContext())
