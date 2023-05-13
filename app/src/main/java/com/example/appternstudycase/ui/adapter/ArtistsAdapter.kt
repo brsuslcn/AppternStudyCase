@@ -28,18 +28,13 @@ class ArtistsAdapter(private val context : Context) : RecyclerView.Adapter<Artis
 
                 root.setOnClickListener()
                 {
-                    for(i in items)
-                    {
-                        if(i?.name == txtArtistName.text)
-                        {
-                            val intent = Intent(context, ArtistSingle::class.java)
-                           intent.putExtra("artistName", i?.name)
-                           intent.putExtra("artistPicture", i?.picture_big)
-                           intent.putExtra("artistId",i?.id)
-                           intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                           context.startActivity(intent)
-                        }
-                    }
+                    val intent = Intent(context, ArtistSingle::class.java)
+                    intent.putExtra("artistName", item?.name)
+                    intent.putExtra("artistPicture", item?.picture_big)
+                    intent.putExtra("artistId",item?.id)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    context.startActivity(intent)
+
                 }
 
             }

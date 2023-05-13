@@ -29,19 +29,16 @@ class ArtistSingleAdapter(private val context : Context) : RecyclerView.Adapter<
 
              root.setOnClickListener()
              {
-                 for(i in items)
-                 {
-                     if(i?.title==txtAlbumName.text)
-                     {
+
                          val intent = Intent(context, AlbumSingle::class.java)
-                         intent.putExtra("albumName", i?.title)
-                         intent.putExtra("albumId", i?.id)
-                         intent.putExtra("albumPic", i?.cover)
-                         Log.e("albumId", i?.id.toString())
+                         intent.putExtra("albumName", item?.title)
+                         intent.putExtra("albumId", item?.id)
+                         intent.putExtra("albumPic", item?.cover)
+                         Log.e("albumId", item?.id.toString())
                          intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK
                          context.startActivity(intent)
-                     }
-                 }
+
+
              }
             }
 

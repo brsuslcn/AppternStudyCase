@@ -6,7 +6,7 @@
     android:layout_margin="25dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp"
-    app:cardBackgroundColor="@color/pink_50">
+    app:cardBackgroundColor="@color/reply_orange_500">
 
 
     <LinearLayout
@@ -14,12 +14,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgArtistPic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/black"/>
 
         <TextView
             android:id="@+id/txtArtistName"
@@ -27,7 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Artist Name"
-            android:layout_marginTop="5dp"/>
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"/>
 
 
     </LinearLayout>

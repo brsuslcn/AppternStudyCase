@@ -28,16 +28,12 @@ class CategoriesAdapter(private val context : Context) : RecyclerView.Adapter<Ca
 
                 root.setOnClickListener()
                 {
-                    for(i in items)
-                    {
-                        if(i?.name == txtCategoryName.text)
-                        {
-                            val intent = Intent(context, CategorySingle::class.java)
-                            intent.putExtra("genreId",i?.id)
-                            intent.putExtra("slctdCategory", i?.name)
-                            context.startActivity(intent)
-                        }
-                    }
+
+                    val intent = Intent(context, CategorySingle::class.java)
+                    intent.putExtra("genreId",item?.id)
+                    intent.putExtra("slctdCategory", item?.name)
+                    context.startActivity(intent)
+
                 }
             }
 

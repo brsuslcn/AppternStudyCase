@@ -5,48 +5,65 @@
     android:layout_height="100dp"
     android:layout_margin="15dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="@color/crane_puruple_700">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgAlbumPic"
-            android:layout_width="75dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="8dp"
-            android:scaleType="centerCrop"
-            android:layout_margin="10dp"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/white"/>
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:layout_toEndOf="@id/imgAlbumPic"
-            android:background="@color/black" />
 
-        <TextView
-            android:id="@+id/txtAlbumName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/view"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="20dp"
-            android:text="Album Name"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf="@id/imgAlbumPic"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/cw_album_bg">
 
-        <TextView
-            android:id="@+id/txtPdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtAlbumName"
-            android:layout_alignStart="@id/view"
-            android:layout_marginStart="20dp"
-            android:layout_centerInParent="true"
-            android:text="Published Date" />
+                <TextView
+                    android:id="@+id/txtAlbumName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="20dp"
+                    android:paddingRight="15dp"
+                    android:text="Album Name"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/txtPdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtAlbumName"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Published Date" />
+
+
+            </LinearLayout>
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
