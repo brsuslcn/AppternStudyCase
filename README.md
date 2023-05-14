@@ -18,7 +18,7 @@ Dependency Injection has been implemented for both the Room and Retrofit depende
 
 ## ScreenShots
 
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/47759665/238210321-074c372d-fda3-49ad-9f12-1be6365831a2.png" width="249" height="512"> <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/47759665/238210354-df0bfc7c-27f0-461e-9218-18617ec0b180.png" width="249" height="512">
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/47759665/238212561-bd35e32f-b21f-475f-942f-e08c68bd86d3.png" width="249" height="512"> <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/47759665/238210354-df0bfc7c-27f0-461e-9218-18617ec0b180.png" width="249" height="512">
 
 <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/47759665/238210345-cd41315b-5a9b-45b4-8b13-33ad7b217b2e.png" width="249" height="512"> <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/47759665/238210348-627b287a-0e14-49cb-ab3d-54ce3d4e3d05.png" width="249" height="512">
 
