@@ -25,6 +25,10 @@
 
     <color name="crane_red_700">#E30425</color>
 
-    <color name="reply_orange_500">#F9AA33</color>
+    <color name="reply_orange_500">#FF6F00</color>
+
+    <color name="red">#FF3D00</color>
+
+
 
 </resources>

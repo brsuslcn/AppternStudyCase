@@ -16,9 +16,12 @@
             android:id="@+id/imgAlbumPic"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:civ_border_width="2dp"
-            app:civ_border_color="@color/pink_100"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:civ_border_color="@color/pink_100"
+            app:civ_border_width="2dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

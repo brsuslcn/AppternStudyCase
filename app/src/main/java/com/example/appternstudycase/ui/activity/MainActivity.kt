@@ -1,5 +1,8 @@
 package com.example.appternstudycase.ui.activity
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,8 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupSmoothBottomMenu()
-
-
     }
 
     private fun setupSmoothBottomMenu() {
@@ -34,5 +35,6 @@ class MainActivity : AppCompatActivity() {
             transaction.commit()
         }
     }
+
 
 }

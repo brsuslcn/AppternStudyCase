@@ -2,6 +2,9 @@ package com.example.appternstudycase.ui.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +12,7 @@ import com.example.appternstudycase.data.model.arists_model.Data
 import com.example.appternstudycase.databinding.CardviewArtistsBinding
 import com.example.appternstudycase.ui.activity.ArtistSingle
 import com.squareup.picasso.Picasso
+
 
 class ArtistsAdapter(private val context : Context) : RecyclerView.Adapter<ArtistsAdapter.ItemViewHolder>() {
 
@@ -25,6 +29,7 @@ class ArtistsAdapter(private val context : Context) : RecyclerView.Adapter<Artis
                 Picasso.get()
                     .load(item?.picture_medium)
                     .into(imgArtistPic)
+
 
                 root.setOnClickListener()
                 {

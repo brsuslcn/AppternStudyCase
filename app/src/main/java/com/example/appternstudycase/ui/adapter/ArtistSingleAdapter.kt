@@ -24,6 +24,7 @@ class ArtistSingleAdapter(private val context : Context) : RecyclerView.Adapter<
                     .load(item?.cover)
                     .into(imgAlbumPic)
 
+
                 txtAlbumName.text = item?.title
                 txtPdate.text = item?.release_date
 
@@ -63,6 +64,8 @@ class ArtistSingleAdapter(private val context : Context) : RecyclerView.Adapter<
         items = newItems
         notifyDataSetChanged()
     }
+
+
 
 
 }

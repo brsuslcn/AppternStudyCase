@@ -1,5 +1,6 @@
 package com.example.appternstudycase.ui.activity
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -10,6 +11,7 @@ import com.example.appternstudycase.ui.adapter.ArtistSingleAdapter
 import com.example.appternstudycase.ui.viewmodel.ArtistSingleViewModel
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class ArtistSingle : AppCompatActivity() {
@@ -32,6 +34,8 @@ class ArtistSingle : AppCompatActivity() {
             Picasso.get()
                 .load(artistPic)
                 .into(imgArtistPic)
+
+
             recyclerView.layoutManager = LinearLayoutManager(applicationContext)
             recyclerView.adapter = artistSingleAdapter
         }
