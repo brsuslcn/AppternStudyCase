@@ -29,7 +29,6 @@ class ArtistSingleAdapter(private val context : Context) : RecyclerView.Adapter<
 
              root.setOnClickListener()
              {
-
                          val intent = Intent(context, AlbumSingle::class.java)
                          intent.putExtra("albumName", item?.title)
                          intent.putExtra("albumId", item?.id)

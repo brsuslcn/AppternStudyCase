@@ -16,13 +16,9 @@
             android:id="@+id/imgAlbumPic"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_margin="10dp"
             app:civ_border_width="2dp"
-            app:civ_border_color="@color/white"/>
-
+            app:civ_border_color="@color/pink_100"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,6 +37,7 @@
                     android:layout_marginStart="20dp"
                     android:paddingRight="15dp"
                     android:text="Album Name"
+                    android:singleLine="true"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:textSize="15sp"
@@ -49,7 +46,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/black"/>
+                    android:background="@color/crane_puruple_700"/>
 
                 <TextView
                     android:id="@+id/txtPdate"

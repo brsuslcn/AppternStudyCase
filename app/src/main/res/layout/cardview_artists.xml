@@ -6,33 +6,42 @@
     android:layout_margin="25dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp"
-    app:cardBackgroundColor="@color/reply_orange_500">
+    app:cardBackgroundColor="@color/crane_puruple_700">
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgArtistPic"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            android:layout_marginTop="10dp"
+            android:layout_margin="10dp"
+            app:civ_border_color="@color/pink_100"
             app:civ_border_width="2dp"
-            app:civ_border_color="@color/black"/>
+            app:layout_constraintBottom_toTopOf="@+id/txtArtistName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
 
         <TextView
             android:id="@+id/txtArtistName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Artist Name"
+            android:layout_gravity="bottom"
+            android:background="@drawable/txtview_bg"
+            android:gravity="center"
+            android:text="Category Name"
             android:textStyle="bold"
-            android:layout_marginBottom="5dp"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
