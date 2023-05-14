@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AppternStudyCase" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.AppternStudyCase" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/crane_puruple_900</item>
         <item name="colorPrimaryVariant">@color/pink_900</item>
