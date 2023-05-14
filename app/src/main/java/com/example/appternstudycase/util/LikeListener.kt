@@ -1,4 +1,4 @@
-package com.example.appternstudycase.ui.adapter
+package com.example.appternstudycase.util
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -2,21 +2,16 @@ package com.example.appternstudycase.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appternstudycase.data.model.sql_likes_model.TracksLikesModel
 import com.example.appternstudycase.databinding.ActivityAlbumSingleBinding
 import com.example.appternstudycase.ui.adapter.AlbumSingleAdapter
-import com.example.appternstudycase.ui.adapter.LikeListener
+import com.example.appternstudycase.util.LikeListener
 import com.example.appternstudycase.ui.viewmodel.AlbumSingleViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class AlbumSingle : AppCompatActivity() , LikeListener {

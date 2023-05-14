@@ -2,11 +2,8 @@ package com.example.appternstudycase.ui.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appternstudycase.data.model.categories_model.Data
 import com.example.appternstudycase.databinding.CardviewCategoriesBinding

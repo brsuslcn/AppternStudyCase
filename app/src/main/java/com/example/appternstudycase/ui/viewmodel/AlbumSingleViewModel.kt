@@ -1,5 +1,6 @@
 package com.example.appternstudycase.ui.viewmodel
 
+
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -30,9 +31,17 @@ class AlbumSingleViewModel @Inject constructor(private val apiRepository: ApiRep
     fun songs(albumId : Int)
     {
         viewModelScope.launch {
-            val response = apiRepository.tracks(albumId)
-            val songItems : TracksModel? = response.body()
-            _tracksLiveData.value = songItems?.data
+
+            try {
+                val response = apiRepository.tracks(albumId)
+                val songItems : TracksModel? = response.body()
+                _tracksLiveData.value = songItems?.data
+            }catch (e:Exception)
+            {
+                Log.e("Connection Error", e.toString())
+            }
+
+
         }
     }
 

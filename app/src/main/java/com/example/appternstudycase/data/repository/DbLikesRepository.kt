@@ -1,6 +1,5 @@
 package com.example.appternstudycase.data.repository
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.appternstudycase.data.model.sql_likes_model.TracksLikesModel
 import com.example.appternstudycase.data.room.LikesDao

@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appternstudycase.R
 import com.example.appternstudycase.data.model.sql_likes_model.TracksLikesModel
 import com.example.appternstudycase.databinding.CardviewTracksBinding
-import com.example.appternstudycase.ui.viewmodel.LikesViewModel
+import com.example.appternstudycase.util.LikeListener
 import com.squareup.picasso.Picasso
 
 class LikesAdapter(private val likeListener: LikeListener, private val lifecycleOwner: LifecycleOwner) : RecyclerView.Adapter<LikesAdapter.ItemViewHolder>() {
@@ -35,13 +34,6 @@ class LikesAdapter(private val likeListener: LikeListener, private val lifecycle
                 val track = TracksLikesModel(item!!.track_id, item!!.track_title, item!!.track_duration, item.track_picture)
                 likeListener.dislikeTrack(track)
                 removeItem(adapterPosition)
-
-
-                //Log.e("Güncel Likes : ", likeListener.getLikes().value.toString())
-                likeListener.getLikes().observe(lifecycleOwner, Observer { deneme ->
-                    Log.e("likeler", deneme.toString())
-                })
-
                 }
             }
 

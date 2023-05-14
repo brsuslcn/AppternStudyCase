@@ -1,5 +1,6 @@
 package com.example.appternstudycase.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,9 +19,15 @@ class CategoriesViewModel @Inject constructor(private val apiRepository: ApiRepo
 
     fun categories() {
         viewModelScope.launch {
-            val response = apiRepository.categories()
-            val categoriesItems: CategoriesModel? = response.body()
-            _categoriesLiveData.value = categoriesItems?.data
+            try {
+                val response = apiRepository.categories()
+                val categoriesItems: CategoriesModel? = response.body()
+                _categoriesLiveData.value = categoriesItems?.data
+            }catch (e:Exception)
+            {
+                Log.e("Connection Error", e.toString())
+            }
+
         }
     }
 }

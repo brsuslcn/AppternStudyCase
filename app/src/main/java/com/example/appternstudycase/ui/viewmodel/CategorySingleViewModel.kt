@@ -1,5 +1,6 @@
 package com.example.appternstudycase.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,10 +19,20 @@ class CategorySingleViewModel @Inject constructor(private val apiRepository: Api
 
     fun artists(genreId : Int)
     {
-        viewModelScope.launch {
-            val response = apiRepository.artists(genreId)
-            val artistItems : ArtistsModel? = response.body()
-            _artistsLiveData.value = artistItems?.data
-        }
+               viewModelScope.launch {
+                   try {
+                       val response = apiRepository.artists(genreId)
+                       val artistItems : ArtistsModel? = response.body()
+                       _artistsLiveData.value = artistItems?.data
+                   }
+                   catch (e:Exception)
+                   {
+                       Log.e("Connection Error : ", e.toString())
+                   }
+
+
+
+           }
+
     }
 }

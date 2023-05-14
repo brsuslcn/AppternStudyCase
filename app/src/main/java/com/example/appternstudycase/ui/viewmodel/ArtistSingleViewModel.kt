@@ -21,10 +21,18 @@ class ArtistSingleViewModel @Inject constructor(private val apiRepository: ApiRe
 
     fun albums(artistId : Int)
     {
+
         viewModelScope.launch {
-            val response = apiRepository.albums(artistId)
-            val albumItems : AlbumsModel? = response.body()
-            _albumsLiveData.value = albumItems?.data
+            try{
+                val response = apiRepository.albums(artistId)
+                val albumItems : AlbumsModel? = response.body()
+                _albumsLiveData.value = albumItems?.data
+
+            }catch (e:Exception)
+            {
+               Log.e("Connection Error", e.toString())
+            }
+
         }
     }
 }

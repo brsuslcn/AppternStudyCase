@@ -1,13 +1,10 @@
 package com.example.appternstudycase.ui.adapter
 
 
-import android.content.Context
 import android.media.AudioAttributes
 import android.media.MediaPlayer
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -16,6 +13,7 @@ import com.example.appternstudycase.R
 import com.example.appternstudycase.data.model.sql_likes_model.TracksLikesModel
 import com.example.appternstudycase.data.model.tracks_model.Data
 import com.example.appternstudycase.databinding.CardviewTracksBinding
+import com.example.appternstudycase.util.LikeListener
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers

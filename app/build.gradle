@@ -77,5 +77,10 @@ dependencies {
     kapt "androidx.room:room-compiler:2.5.1"
     implementation "androidx.room:room-ktx:2.5.1"
 
+    // CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Lottie
+    implementation 'com.airbnb.android:lottie:6.0.0'
+
 }

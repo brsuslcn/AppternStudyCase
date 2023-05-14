@@ -1,12 +1,7 @@
 package com.example.appternstudycase.ui.activity
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.appternstudycase.R
 import com.example.appternstudycase.databinding.ActivityMainBinding
 import com.example.appternstudycase.ui.fragment.CategoriesFragment
 import com.example.appternstudycase.ui.fragment.LikesFragment
