@@ -17,6 +17,7 @@ import com.example.appternstudycase.util.LikeListener
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.DecimalFormat
@@ -59,7 +60,9 @@ class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwn
                 lifecycleOwner.lifecycleScope.launch() {
                     playTrack(item!!.preview)
                     }
+
                 }
+
 
             btnLike.setOnClickListener()
             {
@@ -128,8 +131,11 @@ class AlbumSingleAdapter(private val albumPic : String, private val lifecycleOwn
 
     fun relaseMediaPlayer() // call it onDestroy
     {
-        if(::mediaPlayer.isInitialized){
-            mediaPlayer.stop()
+
+        if (::mediaPlayer.isInitialized) {
+            if (mediaPlayer.isPlaying) {
+                mediaPlayer.stop()
+            }
             mediaPlayer.release()
         }
     }
